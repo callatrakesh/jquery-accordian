@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Jquery Accordian</title>   
+    <style>
+	*{box-sizing:border-box;}
+     html{background:#eee;}
+	 body{max-width:1140px; margin:0 auto; padding:30px; background:#fff; font-size:16px; color:#333; height:100%; box-shadow:2px 2px 5px rgba(0,0,0,0.12);}
+	 hr{height:1px; background:#eee; margin:15px 0;}
+	 h1{ margin:0 0 20px 0; text-align:center}
+	 p{margin:0px;}
+	 dl{margin:0; padding:0; border:1px solid #ddd; border-bottom-width:0px; border-radius:3px;}
+	 dl > dd, dl > dt{padding:10px 15px; border-bottom:1px solid #ddd; margin:0;}
+	  dl > dd{ position:relative; cursor:pointer;}
+	  dl > dd:after{content:'+'; position:absolute; right:10px; color:#999; font-weight:bold;}
+	  dl > dd.on:after{content:'-';}
+	 dl > dt{display:none; color:#666;}
+	 dl > dt.on{ display:block;}
+    </style>
+    
+</head>
+
+<body>
+	<h1>Simple jQuery Accordian</h1>
+    <hr>
+    <p>Simple jQuery Accordian, Only one open at one time</p>
+    <br>
+    <dl class="j-accordian">
+    	<dd class="on">Accordian Title 1 </dd>
+        <dt class="on">
+        	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.<br><br>
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
+        </dt>
+        <dd>Accordian Title 2 </dd>
+        <dt>
+        	<p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+        </dt>
+        <dd>Accordian Title 3 </dd>
+        <dt>
+        	<p>Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac</p>
+        </dt>
+        <dd>Accordian Title 4 </dd>
+        <dt>
+        	<p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus.</p>
+        </dt>
+    </dl>
+    <br>
+    <hr>
+    <p>Simple jQuery Accordian, using Toggle</p>
+    <br>
+    <dl class="accordian-toggle">
+    	<dd>Accordian Title 1 </dd>
+        <dt>
+        	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.<br><br>
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
+        </dt>
+        <dd>Accordian Title 2 </dd>
+        <dt>
+        	<p>Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+        </dt>
+        <dd>Accordian Title 3 </dd>
+        <dt>
+        	<p>Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac</p>
+        </dt>
+        <dd>Accordian Title 4 </dd>
+        <dt>
+        	<p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus.</p>
+        </dt>
+    </dl>
+    <!--included jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+     $(document).ready(function() {
+        $('.j-accordian dd').click(function() {
+			$(this).parent().find('dd').removeClass('on');
+			$(this).parent().find('dt').removeClass('on');
+            $(this).addClass('on');
+			$(this).next().addClass('on');
+        });
+		
+		$('.accordian-toggle dd').click(function() {			
+            $(this).toggleClass('on');
+			$(this).next().slideToggle();
+        });
+    });
+    </script>
+</body>
+</html>
