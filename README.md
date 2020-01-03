@@ -1,2 +1,2 @@
-# jquery-accordian
+# jquery-accordion
 Simple jquery accordion
