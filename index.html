@@ -74,15 +74,15 @@ Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v
     <script>
      $(document).ready(function() {
         $('.j-accordian dd').click(function() {
-			$(this).parent().find('dd').removeClass('on');
-			$(this).parent().find('dt').removeClass('on');
+	    $(this).parent().find('dd').removeClass('on');
+	    $(this).parent().find('dt').removeClass('on');
             $(this).addClass('on');
-			$(this).next().addClass('on');
+	    $(this).next().addClass('on');
         });
 		
-		$('.accordian-toggle dd').click(function() {			
+	    $('.accordian-toggle dd').click(function() {			
             $(this).toggleClass('on');
-			$(this).next().slideToggle();
+	    $(this).next().slideToggle();
         });
     });
     </script>
